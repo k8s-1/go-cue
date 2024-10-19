@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"gopkg.in/yaml.v3"
-	"os"
 	"log"
+	"os"
 )
 
 func parse() {
@@ -28,16 +28,21 @@ func parse() {
 	// Print the parsed data
 	fmt.Printf("Parsed YAML data: %+v\n", data)
 
+	// Access specific keys without caring about types
+	for key, value := range data {
+		fmt.Printf("%s: %v\n", key, value) // %v will print the value in a generic way
+	}
+
 	// Access specific keys (dynamic content)
 	if name, ok := data["name"]; ok {
 		fmt.Println("Name:", name)
 	}
 
-	if address, ok := data["address"].(map[interface{}]interface{}); ok {
+	if address, ok := data["address"]; ok {
 		fmt.Println("Address:", address)
 	}
 
-	if hobbies, ok := data["hobbies"].([]interface{}); ok {
+	if hobbies, ok := data["hobbies"]; ok {
 		fmt.Println("Hobbies:", hobbies)
 	}
 }
