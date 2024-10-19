@@ -7,15 +7,14 @@ import (
 func dynamicstruct() {
 	person := Person{
 		Name: "Charlie Cartwright",
-		Age:  999,
 	}
 
-  // Check if "Age" exists in dynamicValues and assign it
-  if age, ok := dynamicValues["Age"]; ok {
-      if ageValue, valid := age.(int); valid { // Ensure the type is correct
-          person.Age = ageValue
-      }
-  }
+  age := 999
+
+	// Check if "Age" exists in dynamicValues and assign it
+	if &age != nil {
+		person.Age = age
+	}
 
 	fmt.Printf("%v\n", person)
 
