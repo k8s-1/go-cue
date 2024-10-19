@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"cuelang.org/go/cue/cuecontext"
+	"fmt"
 	"gopkg.in/yaml.v3"
 	"log"
 	"os"
@@ -64,12 +64,8 @@ func parse() {
 	}
 
 	personAsCUE := ctx.Encode(person)
-  		cueContent += fmt.Sprintf("%v\n", personAsCUE)
+	cueContent += fmt.Sprintf("%v\n", personAsCUE)
 
-	// fmt.Printf("%v\n", personAsCUE)
-	for key, value := range data {
-		cueContent += fmt.Sprintf("%s: %v\n", key, value)
-	}
 	cueContent += `
     }
 }
