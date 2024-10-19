@@ -72,4 +72,5 @@ func parse() {
 yaml.MarshalStream([ for _, o in #objects {o} ])
 `
 	fmt.Printf("CUE file: %+v\n", cueContent)
+
 }
