@@ -15,7 +15,7 @@ type Person struct {
 
 func main() {
   ctx := cuecontext.New()
-	insts := load.Instances([]string{"."}, nil) // build in current dir
+	insts := load.Instances([]string{"."}, nil) // build max 1 package in current dir
 	v := ctx.BuildInstance(insts[0])
 	fmt.Printf("%v\n", v)
 	// ctx := cuecontext.New()
