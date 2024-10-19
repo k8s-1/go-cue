@@ -9,10 +9,8 @@ func dynamicstruct() {
 		Name: "Charlie Cartwright",
 	}
 
-  age := 999
-
 	// Check if "Age" exists in dynamicValues and assign it
-	if &age != nil {
+	if age != nil {
 		person.Age = age
 	}
 
