@@ -15,6 +15,6 @@ func dynamicstruct() {
 		person.Age = age
 	}
 
-	fmt.Printf("%v\n", person)
+	fmt.Printf("%v\n", person.Age)
 
 }
