@@ -18,6 +18,7 @@ func main() {
 	// insts := load.Instances([]string{"."}, nil) // build max 1 package in current dir
 	// v := ctx.BuildInstance(insts[0])
 	// fmt.Printf("%v\n", v)
+
 	ctx := cuecontext.New()
 
 	person := Person{
