@@ -6,6 +6,7 @@ import (
 	"gopkg.in/yaml.v3"
 	"log"
 	"os"
+	"os/exec"
 )
 
 func parse() {
@@ -73,4 +74,25 @@ yaml.MarshalStream([ for _, o in #objects {o} ])
 `
 	fmt.Printf("CUE file: %+v\n", cueContent)
 
+  cuefile := "output.cue"
+	// create file
+	f, err := os.Create(cuefile)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// remember to close the file
+	defer f.Close()
+
+	if _, err := f.WriteString(cueContent); err != nil {
+		log.Println(err)
+	}
+
+	// Format the CUE file using `cue fmt`
+	cmd := exec.Command("cue", "fmt", cuefile)
+	err = cmd.Run()
+	if err != nil {
+		log.Fatalf("Error formatting CUE file: %v", err)
+	}
+
+	fmt.Println("CUE file generated and formatted successfully: output.cue")
 }
