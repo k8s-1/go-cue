@@ -2,9 +2,9 @@ package main
 
 import (
 	// _ "embed"
-	"fmt"
+	// "fmt"
 
-	"cuelang.org/go/cue/cuecontext"
+	// "cuelang.org/go/cue/cuecontext"
 	// "cuelang.org/go/cue/load"
 )
 
@@ -19,13 +19,14 @@ func main() {
 	// v := ctx.BuildInstance(insts[0])
 	// fmt.Printf("%v\n", v)
 
-	ctx := cuecontext.New()
-
-	person := Person{
-		Name: "Charlie Cartwright",
-		Age:  999,
-	}
-
-	personAsCUE := ctx.Encode(person)
-	fmt.Printf("%v\n", personAsCUE)
+	// ctx := cuecontext.New()
+	//
+	// person := Person{
+	// 	Name: "Charlie Cartwright",
+	// 	Age:  999,
+	// }
+	//
+	// personAsCUE := ctx.Encode(person)
+	// fmt.Printf("%v\n", personAsCUE)
+  parse()
 }
