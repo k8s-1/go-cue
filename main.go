@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "embed"
+	// _ "embed"
 	"fmt"
 
 	"cuelang.org/go/cue/cuecontext"
@@ -26,5 +26,5 @@ func main() {
 	}
 
 	personAsCUE := ctx.Encode(person)
-	fmt.Printf("%personAsCUE\n", personAsCUE)
+	fmt.Printf("%v\n", personAsCUE)
 }
