@@ -15,6 +15,7 @@ func dynamicstruct() {
 		person.Age = age
 	}
 
+	fmt.Printf("%v\n", person.Name)
 	fmt.Printf("%v\n", person.Age)
 
 }
