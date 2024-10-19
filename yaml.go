@@ -9,7 +9,7 @@ import (
 
 func parse() {
 	// Read the YAML file
-	content, err := os.ReadFile("file.txt")
+	content, err := os.ReadFile("values.yaml")
 	if err != nil {
 		log.Fatal(err)
 	}
