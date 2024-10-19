@@ -46,33 +46,25 @@ func parse() {
 		fmt.Println("Hobbies:", hobbies)
 	}
 
-
-
-
-    // Step 3: Construct CUE content dynamically
-    cueContent := `import (
+	// Step 3: Construct CUE content dynamically
+	cueContent := `import (
     "github.com/k8s-1/app/best"
 )
 
 #objects: best.#Def & {
     #vals: {
         `
+	for key, value := range data {
 
-    // Assuming your data has "val1" and "val2" as keys under "vals"
-    if vals, ok := data["vals"].(map[interface{}]interface{}); ok {
-        for key, value := range vals {
-            cueContent += fmt.Sprintf("%s: %v\n", key, value)
-        }
-    }
+		cueContent += fmt.Sprintf("%s: %v\n", key, value)
+	}
 
-    cueContent += `
+	cueContent += `
     }
 }
 
 yaml.MarshalStream([ for _, o in #objects {o} ])
 `
-
-
 
 	fmt.Printf("CUE file: %+v\n", cueContent)
 
