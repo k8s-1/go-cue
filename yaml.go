@@ -54,18 +54,23 @@ func parse() {
 #objects: best.#Def & {
     #vals: {
         `
-	for key, value := range data {
 
+	// ctx := cuecontext.New()
+	//
+	// person := Person{
+	// 	Name: "Charlie Cartwright",
+	// 	Age:  999,
+	// }
+	//
+	// personAsCUE := ctx.Encode(person)
+	// fmt.Printf("%v\n", personAsCUE)
+	for key, value := range data {
 		cueContent += fmt.Sprintf("%s: %v\n", key, value)
 	}
-
 	cueContent += `
     }
 }
-
 yaml.MarshalStream([ for _, o in #objects {o} ])
 `
-
 	fmt.Printf("CUE file: %+v\n", cueContent)
-
 }
