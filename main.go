@@ -29,4 +29,5 @@ func main() {
 	// personAsCUE := ctx.Encode(person)
 	// fmt.Printf("%v\n", personAsCUE)
   parse()
+  dynamicstruct()
 }
