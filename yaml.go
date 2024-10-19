@@ -32,9 +32,11 @@ func parse() {
 	if name, ok := data["name"]; ok {
 		fmt.Println("Name:", name)
 	}
+
 	if address, ok := data["address"].(map[interface{}]interface{}); ok {
 		fmt.Println("Address:", address)
 	}
+
 	if hobbies, ok := data["hobbies"].([]interface{}); ok {
 		fmt.Println("Hobbies:", hobbies)
 	}
