@@ -1,0 +1,10 @@
+name: "Charlie Cartwright"
+age: 999
+address:
+  street: "123 Main St"
+  city: "Somewhere"
+  zip: 12345
+hobbies:
+  - reading
+  - traveling
+  - coding
